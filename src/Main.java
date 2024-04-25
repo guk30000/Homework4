@@ -18,35 +18,21 @@ public class Main {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
-        // Задача 2.1
-        int clientOS1 = 1;
+        // Задача 2
         int clientDeviceYear = 2014;
+        clientOS = 0;
         String result;
 
         if (clientDeviceYear <= 2015) {
-            result = (clientOS1 == 0)
+            result = (clientOS == 0)
                     ? "Установите облегченную версию для iOS по ссылке"
                     : "Установите облегченную версию для Android по ссылке";
         } else {
-            result = (clientOS1 == 0)
+            result = (clientOS == 0)
                     ? "Установите версию для iOS по ссылке"
                     : "Установите версию для Android по ссылке";
         }
         System.out.println(result);
-
-        // Задача 2.2
-        int clientOS2 = 0;
-        int clientDeviceYear2 = 2016;
-
-        if (clientDeviceYear2 <= 2015 && clientOS2 == 1) {
-            System.out.println("Установите облегченную версию для iOS по ссылке");
-        } else if (clientDeviceYear2 <= 2015 && clientOS2 != 1) {
-            System.out.println("Установите облегченную версию для Android по ссылке");
-        } else if (clientDeviceYear2 > 2015 && clientOS2 == 1) {
-            System.out.println("Установите версию для iOS по ссылке");
-        } else {
-            System.out.println("Установите версию для Android по ссылке");
-        }
 
         // Задача 3
         int year = 2024;
@@ -75,9 +61,11 @@ public class Main {
         }
 
         // Задача 5
-        int monthNumber = 4;
+        int monthNumber = 12;
 
-        switch (monthNumber) {
+        if (monthNumber < 1 || monthNumber > 12) {
+            System.out.println("Такого месяца нет");
+        } else switch (monthNumber) {
             case 1:
                 System.out.println("Январь принадлежит к сезону зима");
                 break;
@@ -114,19 +102,18 @@ public class Main {
             case 12:
                 System.out.println("Декабрь принадлежит к сезону зима");
                 break;
-            default:
-                break;
         }
 
         // Задача 5.1
-        int monthNumber1 = 7;
+        monthNumber = 12;
 
-        switch (monthNumber1) {
+        if (monthNumber < 1 || monthNumber > 12) {
+            System.out.println("Такого месяца нет");
+        } else switch (monthNumber) {
             case 1, 2, 12 -> System.out.println("Зима");
             case 3, 4, 5 -> System.out.println("Весна");
             case 6, 7, 8 -> System.out.println("Лето");
             case 9, 10, 11 -> System.out.println("Осень");
-            default -> System.out.println("Такого месяца нет");
         }
     }
 }
